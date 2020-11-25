@@ -6,10 +6,10 @@
 </div>
 <div class="row">
     <div class="col">
-        <ul class="list-group">
-            <li class="list-group-item">Anime 1</li>
-            <li class="list-group-item">Anime 2</li>
-            <li class="list-group-item">Anime 3</li>
-        </ul>
+        <div class="list-group">
+            <a *ngFor="let s of searchString" [routerLink]="['/result', s.genre, s.q]" class="list-group-item list-group-item-action">
+                {{s.q}}-{{s.genre}}
+            </a>
+          </div>
     </div>
 </div>

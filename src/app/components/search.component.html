@@ -6,17 +6,17 @@
 </div>
 <form class="form-group" [formGroup]="form">
     <label for="title">{{genre}} title:</label>
-    <input type="text" name="title" id="title" class="form-control" placeholder="Title of series" formControlName="query">
+    <input type="text" name="title" id="title" class="form-control" placeholder="Title of series" formControlName="q">
     <br>
     <label for="genreType">Genre:</label><br>
     <div class="btn-group" role="group" aria-label="Genre Type" id="genreType">
-        <button type="button" class="btn btn-warning" (click)="setGenre('anime')">Anime</button>
-        <button type="button" class="btn btn-info" (click)="setGenre('manga')">Manga</button>
+        <button type="button" class="btn btn-warning" (click)="setGenre('Anime')">Anime</button>
+        <button type="button" class="btn btn-info" (click)="setGenre('Manga')">Manga</button>
     </div>
     <br><br>
     <div class="row">
         <div class="col d-flex flex-row">
-            <button type="button" class="btn btn-secondary" [disabled]="form.invalid">Save</button>
+            <button type="button" class="btn btn-secondary" [disabled]="form.invalid" (click)="onClickSave($event)">Save</button>
         </div>
         <div class="col d-flex flex-row-reverse">
             <button type="button" class="btn btn-secondary" [disabled]="form.invalid" (click)="onClickGo($event)">Go</button>

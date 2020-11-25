@@ -1,1 +1,18 @@
-<p>result works!</p>
+<div class="row">
+    <div class="col-9">
+        <h4>Search Key: {{q}}, genre: {{genre}}</h4>
+    </div>
+    <div class="col-3">
+        <button type="button" class="btn btn-primary" [routerLink]="['/list']">Back</button>
+    </div>
+</div>
+<div class="row" *ngFor="let r of jikenResult">
+    <div class="card" style="width: 18rem;">
+        <img [src]="r.image_url" class="card-img-top" alt="Item Pic">
+        <div class="card-body">
+            <h5 class="card-title">{{r.title}}</h5>
+            <p class="card-text">{{r.synopsis}}</p>
+            <a [href]="r.url" class="btn btn-primary">Learn more</a>
+        </div>
+    </div>
+</div>
