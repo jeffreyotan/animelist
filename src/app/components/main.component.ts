@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  options: AnimationOptions = {
+    path: './assets/santa.json'
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onClickAnime($event): void {
+    this.router.navigate(['/list']);
   }
 
 }
